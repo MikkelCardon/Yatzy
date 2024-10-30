@@ -142,6 +142,7 @@ public class YatzyGui extends Application {
              }
     }
 
+
     private void updateResult(){
         YatzyResultCalculator resultCalculator = new YatzyResultCalculator(raffleCup.getDice());
 
@@ -161,6 +162,7 @@ public class YatzyGui extends Application {
 
     }
 
+
     public void chooseFieldAction(Event event, int indeks,String upperOrLower) {
         TextField textField = (TextField) event.getSource();
         textField.setStyle("-fx-background-color: darkGray;");
@@ -178,6 +180,7 @@ public class YatzyGui extends Application {
         resetForNewRound();
         checkIfAllIsLocked();
     }
+
 
     public void resetForNewRound(){
         for (int index = 0; index < diceLabels.length; index++) {
@@ -199,6 +202,7 @@ public class YatzyGui extends Application {
         rollCountLabel.setText("Antal slag tilbage: "+ rollCount);
     }
 
+
     public void checkIfAllIsLocked(){
         int numberOfLockedTextFields = 0;
         for (TextField textField : upperSectionScoreTextField) {
@@ -215,13 +219,4 @@ public class YatzyGui extends Application {
             totalTextField.setText(String.valueOf(resultStorage.getTotalScore()));
         }
     }
-
-//    metode til at koble summen til upperSectionScore sammen med upperSectionScore metoden i calculator
-//    Tænker det nemt kan gøres med et for loop, nu når metoden er ens, og det kun er parameteren, som ændre sig
-
-
-//    Metode (måske en for hvert felt) til at koble summen til lowerSectionScore med de tilsvarende metoder i calculator
-//    Det bliver mere individuelt her, så vi skal bruge selve elementerne i lowerSectionScore Arrayet, og huske hvilken der passer til beskrivelserne
-
-//    Tænker metoderne skal kaldes i rollDice metoden, så de bliver aktiveret ved tryk på rollButton
 }
